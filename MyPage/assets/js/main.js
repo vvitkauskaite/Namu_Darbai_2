@@ -1,4 +1,4 @@
-(function () {
+ (function () {
   "use strict";
 
   /* =========================
@@ -334,6 +334,80 @@
 
   renderCurrentLamp();
 
+
+
+    /* === VIRTUVĖS LEMPOS – 2 įrenginiai === */
+  const kitchenLamps = [
+    {
+      src: "assets/img/rooms/lempa5.png",
+      name: "Stalo apšvietimas",
+      brightness: 75,
+      on: true,
+    },
+    {
+      src: "assets/img/rooms/lempa4.png",
+      name: "Pagrindinis apšvietimas",
+      brightness: 90,
+      on: true,
+    },
+  ];
+
+  const kLampImgEl = document.querySelector(".lamp-image-kitchen");
+  const kLampNameEl = document.getElementById("kitchenLampName");
+  const kLampBrightnessSlider = document.querySelector(".kitchen-lamp-brightness");
+  const kLampBrightnessValue = document.getElementById("kitchenLampBrightnessValue");
+  const kLampToggle = document.querySelector('[data-role="kitchen-lamp-power"]');
+
+  let kLampIndex = 0;
+
+  function renderKitchenLamp() {
+    if (
+      !kLampImgEl ||
+      !kLampNameEl ||
+      !kLampBrightnessSlider ||
+      !kLampBrightnessValue ||
+      !kLampToggle
+    ) return;
+
+    const lamp = kitchenLamps[kLampIndex];
+
+    kLampImgEl.src = lamp.src;
+    kLampImgEl.alt = lamp.name;
+    kLampNameEl.textContent = lamp.name;
+
+    kLampBrightnessSlider.value = lamp.brightness;
+    kLampBrightnessValue.textContent = lamp.brightness;
+
+    kLampToggle.classList.toggle("is-on", lamp.on);
+  }
+
+  document.querySelectorAll(".kitchen-lamp-prev, .kitchen-lamp-next").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const dir = btn.classList.contains("kitchen-lamp-next") ? 1 : -1;
+      kLampIndex = (kLampIndex + dir + kitchenLamps.length) % kitchenLamps.length;
+      renderKitchenLamp();
+    });
+  });
+
+  if (kLampBrightnessSlider && kLampBrightnessValue) {
+    kLampBrightnessSlider.addEventListener("input", () => {
+      const lamp = kitchenLamps[kLampIndex];
+      lamp.brightness = parseInt(kLampBrightnessSlider.value, 10);
+      kLampBrightnessValue.textContent = lamp.brightness;
+    });
+  }
+
+  if (kLampToggle) {
+    kLampToggle.addEventListener("click", () => {
+      const lamp = kitchenLamps[kLampIndex];
+      lamp.on = !lamp.on;
+      kLampToggle.classList.toggle("is-on", lamp.on);
+    });
+  }
+
+  renderKitchenLamp();
+
+
   /* === AC temperatūra – paprastas skaičius su +/- (be rato) === */
   (function () {
     const acCard = document.querySelector(".ac-card");
@@ -554,5 +628,549 @@
       knob.style.top = `${ky}px`;
     })();
   })();
+  
 
-})();
+  
+  
+  
+  
+  /* === Eglutės spalvų ratas su pipete === */
+  (function () {
+    const wheel = document.querySelector(".tree-color-wheel");
+    const knob = document.querySelector(".tree-color-knob");
+    const colorLabel = document.getElementById("treeColorLabel");
+    const colorPreview = document.getElementById("treeColorPreview");
+    const colorInput = document.getElementById("treeColorPicker");
+
+    if (!wheel || !knob || !colorLabel || !colorPreview || !colorInput) return;
+
+    const outerRadiusOffset = 12; // kiek nutraukti nuo krašto
+    const innerRadiusRatio = 0.4; // vidinio juodo rato santykis
+
+    let isDragging = false;
+
+    function hslToHex(h, s = 1, l = 0.5) {
+      const c = (1 - Math.abs(2 * l - 1)) * s;
+      const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+      const m = l - c / 2;
+      let r = 0,
+        g = 0,
+        b = 0;
+
+      if (0 <= h && h < 60) {
+        r = c;
+        g = x;
+        b = 0;
+      } else if (60 <= h && h < 120) {
+        r = x;
+        g = c;
+        b = 0;
+      } else if (120 <= h && h < 180) {
+        r = 0;
+        g = c;
+        b = x;
+      } else if (180 <= h && h < 240) {
+        r = 0;
+        g = x;
+        b = c;
+      } else if (240 <= h && h < 300) {
+        r = x;
+        g = 0;
+        b = c;
+      } else if (300 <= h && h < 360) {
+        r = c;
+        g = 0;
+        b = x;
+      }
+
+      const toHex = (v) =>
+        Math.round((v + m) * 255)
+          .toString(16)
+          .padStart(2, "0");
+
+      return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+    }
+
+    function setColorFromPoint(clientX, clientY) {
+      const rect = wheel.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      let dx = clientX - cx;
+      let dy = clientY - cy;
+
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const outerR = rect.width / 2 - outerRadiusOffset;
+      const innerR = rect.width * innerRadiusRatio;
+
+      // jei per arti centro – stumiam į žiedą
+      if (dist < innerR) {
+        dx = (dx / (dist || 1)) * innerR;
+        dy = (dy / (dist || 1)) * innerR;
+      }
+      // jei per toli – ribojam iki išorinio spindulio
+      if (dist > outerR) {
+        dx = (dx / dist) * outerR;
+        dy = (dy / dist) * outerR;
+      }
+
+      // nauja rankenėlės pozicija
+      const kx = rect.width / 2 + dx;
+      const ky = rect.height / 2 + dy;
+      knob.style.left = `${kx}px`;
+      knob.style.top = `${ky}px`;
+
+      // kampas -> hue (0° viršuje)
+      let angleDeg = (Math.atan2(dy, dx) * 180) / Math.PI; // -180..180
+      angleDeg = angleDeg + 90;
+      if (angleDeg < 0) angleDeg += 360;
+
+      const hex = hslToHex(angleDeg);
+      colorLabel.textContent = hex;
+      colorPreview.style.background = hex;
+      colorInput.value = hex;
+    }
+
+    function handlePointerDown(e) {
+      e.preventDefault();
+      isDragging = true;
+      setColorFromPoint(e.clientX, e.clientY);
+      window.addEventListener("pointermove", handlePointerMove);
+      window.addEventListener("pointerup", handlePointerUp);
+    }
+
+    function handlePointerMove(e) {
+      if (!isDragging) return;
+      setColorFromPoint(e.clientX, e.clientY);
+    }
+
+    function handlePointerUp() {
+      isDragging = false;
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerup", handlePointerUp);
+    }
+
+    // drag ant rato ir ant paties rutuliuko
+    wheel.addEventListener("pointerdown", handlePointerDown);
+    knob.addEventListener("pointerdown", handlePointerDown);
+
+    // iniciali pozicija pagal pradinę spalvą
+    (function initFromHex() {
+      const hex = colorInput.value || "#3459a2";
+      colorLabel.textContent = hex;
+      colorPreview.style.background = hex;
+
+      // apytiksliai HEX -> HUE
+      const r = parseInt(hex.slice(1, 3), 16) / 255;
+      const g = parseInt(hex.slice(3, 5), 16) / 255;
+      const b = parseInt(hex.slice(5, 7), 16) / 255;
+      const max = Math.max(r, g, b);
+      const min = Math.min(r, g, b);
+      const d = max - min;
+      let h = 0;
+
+      if (d === 0) h = 0;
+      else if (max === r) h = ((g - b) / d) % 6;
+      else if (max === g) h = (b - r) / d + 2;
+      else h = (r - g) / d + 4;
+
+      h = Math.round(h * 60);
+      if (h < 0) h += 360;
+
+      const rect = wheel.getBoundingClientRect();
+      const outerR = rect.width / 2 - outerRadiusOffset;
+      const angleRad = ((h - 90) * Math.PI) / 180;
+      const dx = Math.cos(angleRad) * outerR;
+      const dy = Math.sin(angleRad) * outerR;
+      const kx = rect.width / 2 + dx;
+      const ky = rect.height / 2 + dy;
+      knob.style.left = `${kx}px`;
+      knob.style.top = `${ky}px`;
+    })();
+  })();
+
+  // Pirkinių sąrašas – pridėti elementą (VIRTUVĖ)
+  (function () {
+    const input = document.getElementById("shopping-input");
+    const addBtn = document.getElementById("shopping-add");
+    const list = document.getElementById("shopping-list");
+
+    if (!input || !addBtn || !list) return;
+
+    function addItem() {
+      const value = input.value.trim();
+      if (!value) return;
+
+      const li = document.createElement("li");
+      li.className = "shopping-item";
+      li.innerHTML = `
+        <label>
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          <span class="item-text"></span>
+        </label>
+      `;
+      li.querySelector(".item-text").textContent = value;
+      list.appendChild(li);
+      input.value = "";
+      input.focus();
+    }
+
+    addBtn.addEventListener("click", addItem);
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") addItem();
+    });
+  })();
+
+  // Virdulio temperatūra – AC tipo pill mygtukai
+  (function () {
+    const container = document.getElementById("kettle-temp-buttons");
+    const valueEl = document.getElementById("kettle-temp-value");
+    if (!container || !valueEl) return;
+
+    container.addEventListener("click", function (e) {
+      const btn = e.target.closest(".pill");
+      if (!btn) return;
+
+      container.querySelectorAll(".pill").forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+
+      const temp = btn.getAttribute("data-temp");
+      valueEl.textContent = temp + "°C";
+    });
+  })();
+
+  // Kavos aparatas – režimo pill mygtukai
+  (function () {
+    const container = document.getElementById("coffee-mode-buttons");
+    const valueEl = document.getElementById("coffee-mode-value");
+    if (!container || !valueEl) return;
+
+    container.addEventListener("click", function (e) {
+      const btn = e.target.closest(".pill");
+      if (!btn) return;
+
+      container.querySelectorAll(".pill").forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+
+      const mode = btn.getAttribute("data-mode");
+      valueEl.textContent = mode;
+    });
+  })();
+
+
+
+    // Miegamasis – užuolaidų grafikas (pasirenkamas laikas + likęs laikas)
+    // Miegamasis – užuolaidų grafikas (įvedimas klaviatūra + scroll)
+  (function () {
+    const hourEl = document.getElementById("curtainHour");
+    const minuteEl = document.getElementById("curtainMinute");
+    const textEl = document.getElementById("curtainTimeText");
+
+    if (!hourEl || !minuteEl || !textEl) return;
+
+    // leidžiam rašyti tiesiai į laukelius
+    hourEl.setAttribute("contenteditable", "true");
+    minuteEl.setAttribute("contenteditable", "true");
+
+    function pad2(n) {
+      return n.toString().padStart(2, "0");
+    }
+
+    function clamp(v, min, max) {
+      return Math.max(min, Math.min(max, v));
+    }
+
+    function parseIntFromEl(el, max) {
+      const raw = el.textContent.replace(/[^\d]/g, "");
+      let n = parseInt(raw, 10);
+      if (isNaN(n)) n = 0;
+      return clamp(n, 0, max);
+    }
+
+    function updateCurtainText() {
+      const h = parseIntFromEl(hourEl, 23);
+      const m = parseIntFromEl(minuteEl, 59);
+
+      hourEl.textContent = pad2(h);
+      minuteEl.textContent = pad2(m);
+
+      const now = new Date();
+      const target = new Date(now);
+
+      target.setHours(h, m, 0, 0);
+      // jeigu laikas jau praėjęs – imsime rytojų
+      if (target <= now) {
+        target.setDate(target.getDate() + 1);
+      }
+
+      const diffMs = target - now;
+      let totalMinutes = Math.round(diffMs / 60000);
+      const hoursLeft = Math.floor(totalMinutes / 60);
+      const minutesLeft = totalMinutes % 60;
+
+      let leftText = "";
+      if (hoursLeft === 0 && minutesLeft === 0) {
+        leftText = "tuoj pat";
+      } else {
+        if (hoursLeft > 0) leftText += hoursLeft + " val.";
+        if (minutesLeft > 0) {
+          leftText += (leftText ? " " : "") + minutesLeft + " min.";
+        }
+      }
+
+      textEl.textContent = `${pad2(h)}:${pad2(m)} (po ${leftText}).`;
+    }
+
+    function changeHour(delta) {
+      let h = parseIntFromEl(hourEl, 23);
+      h = (h + delta + 24) % 24;
+      hourEl.textContent = pad2(h);
+      updateCurtainText();
+    }
+
+    function changeMinute(delta) {
+      let m = parseIntFromEl(minuteEl, 59);
+      m = (m + delta + 60) % 60;
+      minuteEl.textContent = pad2(m);
+      updateCurtainText();
+    }
+
+    // SCROLL – ratukas ant skaičiaus: +1 / -1
+    hourEl.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      changeHour(e.deltaY < 0 ? 1 : -1);
+    });
+
+    minuteEl.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      changeMinute(e.deltaY < 0 ? 1 : -1);
+    });
+
+    // BLUR / ENTER – kai baigi rašyti, normalizuojam reikšmes
+    function attachEditHandlers(el, max) {
+      el.addEventListener("blur", updateCurtainText);
+
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          el.blur();
+          return;
+        }
+        // leidžiam tik skaičius ir kelis valdymo klavišus
+        const allowed = [
+          "Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab",
+        ];
+        if (
+          !allowed.includes(e.key) &&
+          !(e.key >= "0" && e.key <= "9")
+        ) {
+          e.preventDefault();
+        }
+      });
+    }
+
+    attachEditHandlers(hourEl, 23);
+    attachEditHandlers(minuteEl, 59);
+
+    // pirminis perskaičiavimas
+    updateCurtainText();
+  })();
+
+
+  // Miegamojo ryškumas – atnaujina procentą
+  (function () {
+    const slider = document.getElementById("bedroomBrightnessSlider");
+    const valueEl = document.getElementById("bedroomBrightnessValue");
+    if (!slider || !valueEl) return;
+
+    function update() {
+      valueEl.textContent = slider.value;
+    }
+
+    slider.addEventListener("input", update);
+    update();
+  })();
+
+  // Miegamojo spalvų ratas – toks pats kaip eglutės, tik kiti selector'iai
+  (function () {
+    const wheel = document.querySelector(".bedroom-color-wheel");
+    const knob = document.querySelector(".bedroom-color-knob");
+    const colorLabel = document.getElementById("bedroomColorLabel");
+    const colorPreview = document.getElementById("bedroomColorPreview");
+    const colorInput = document.getElementById("bedroomColorPicker");
+
+    if (!wheel || !knob || !colorLabel || !colorPreview || !colorInput) return;
+
+    const outerRadiusOffset = 12;
+    const innerRadiusRatio = 0.4;
+
+    let isDragging = false;
+
+    function hslToHex(h, s = 1, l = 0.5) {
+      const c = (1 - Math.abs(2 * l - 1)) * s;
+      const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+      const m = l - c / 2;
+      let r = 0, g = 0, b = 0;
+
+      if (0 <= h && h < 60) { r = c; g = x; b = 0; }
+      else if (60 <= h && h < 120) { r = x; g = c; b = 0; }
+      else if (120 <= h && h < 180) { r = 0; g = c; b = x; }
+      else if (180 <= h && h < 240) { r = 0; g = x; b = c; }
+      else if (240 <= h && h < 300) { r = x; g = 0; b = c; }
+      else if (300 <= h && h < 360) { r = c; g = 0; b = x; }
+
+      const toHex = (v) => Math.round((v + m) * 255).toString(16).padStart(2, "0");
+      return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+    }
+
+    function setColorFromPoint(clientX, clientY) {
+      const rect = wheel.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      let dx = clientX - cx;
+      let dy = clientY - cy;
+
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const outerR = rect.width / 2 - outerRadiusOffset;
+      const innerR = rect.width * innerRadiusRatio;
+
+      if (dist < innerR) {
+        dx = (dx / (dist || 1)) * innerR;
+        dy = (dy / (dist || 1)) * innerR;
+      }
+      if (dist > outerR) {
+        dx = (dx / dist) * outerR;
+        dy = (dy / dist) * outerR;
+      }
+
+      const kx = rect.width / 2 + dx;
+      const ky = rect.height / 2 + dy;
+      knob.style.left = `${kx}px`;
+      knob.style.top = `${ky}px`;
+
+      let angleDeg = (Math.atan2(dy, dx) * 180) / Math.PI;
+      angleDeg = angleDeg + 90;
+      if (angleDeg < 0) angleDeg += 360;
+
+      const hex = hslToHex(angleDeg);
+      colorLabel.textContent = hex;
+      colorPreview.style.background = hex;
+      colorInput.value = hex;
+    }
+
+    function handlePointerDown(e) {
+      e.preventDefault();
+      isDragging = true;
+      setColorFromPoint(e.clientX, e.clientY);
+      window.addEventListener("pointermove", handlePointerMove);
+      window.addEventListener("pointerup", handlePointerUp);
+    }
+
+    function handlePointerMove(e) {
+      if (!isDragging) return;
+      setColorFromPoint(e.clientX, e.clientY);
+    }
+
+    function handlePointerUp() {
+      isDragging = false;
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerup", handlePointerUp);
+    }
+
+    wheel.addEventListener("pointerdown", handlePointerDown);
+    knob.addEventListener("pointerdown", handlePointerDown);
+
+    // iniciali pozicija pagal pradinę spalvą
+    (function initFromHex() {
+      const hex = colorInput.value || "#ffffff";
+      colorLabel.textContent = hex;
+      colorPreview.style.background = hex;
+
+      const r = parseInt(hex.slice(1, 3), 16) / 255;
+      const g = parseInt(hex.slice(3, 5), 16) / 255;
+      const b = parseInt(hex.slice(5, 7), 16) / 255;
+      const max = Math.max(r, g, b);
+      const min = Math.min(r, g, b);
+      const d = max - min;
+      let h = 0;
+
+      if (d === 0) h = 0;
+      else if (max === r) h = ((g - b) / d) % 6;
+      else if (max === g) h = (b - r) / d + 2;
+      else h = (r - g) / d + 4;
+
+      h = Math.round(h * 60);
+      if (h < 0) h += 360;
+
+      const rect = wheel.getBoundingClientRect();
+      const outerR = rect.width / 2 - outerRadiusOffset;
+      const angleRad = ((h - 90) * Math.PI) / 180;
+      const dx = Math.cos(angleRad) * outerR;
+      const dy = Math.sin(angleRad) * outerR;
+      const kx = rect.width / 2 + dx;
+      const ky = rect.height / 2 + dy;
+      knob.style.left = `${kx}px`;
+      knob.style.top = `${ky}px`;
+    })();
+  })();
+
+  // Audio sistema – garsas su slideriu ir +/- mygtukais
+  (function () {
+    const slider = document.getElementById("audioVolumeSlider");
+    const valueEl = document.getElementById("audioVolumeValue");
+    const minusBtn = document.querySelector(".audio-vol-minus");
+    const plusBtn = document.querySelector(".audio-vol-plus");
+
+    if (!slider || !valueEl || !minusBtn || !plusBtn) return;
+
+    function clamp(v) {
+      if (v < 0) return 0;
+      if (v > 100) return 100;
+      return v;
+    }
+
+    function update() {
+      valueEl.textContent = slider.value;
+    }
+
+    slider.addEventListener("input", update);
+
+    minusBtn.addEventListener("click", () => {
+      slider.value = clamp(parseInt(slider.value, 10) - 5);
+      update();
+    });
+
+    plusBtn.addEventListener("click", () => {
+      slider.value = clamp(parseInt(slider.value, 10) + 5);
+      update();
+    });
+
+    update();
+  })();
+
+  
+  // Miegamasis – audio sistema: app pasirinkimas (Spotify / YouTube / SoundCloud)
+  (function () {
+    const audioCard = document.querySelector(".audio-card");
+    if (!audioCard) return;
+
+    const appsRow = audioCard.querySelector(".audio-apps-row");
+    if (!appsRow) return;
+
+    appsRow.addEventListener("click", (e) => {
+      const btn = e.target.closest(".audio-app");
+      if (!btn) return;
+
+      // nuimam aktyvumą nuo visų
+      appsRow.querySelectorAll(".audio-app").forEach((b) => {
+        b.classList.remove("is-active");
+      });
+
+      // uždedam ant pasirinkto
+      btn.classList.add("is-active");
+    });
+  })();
+
+})(); // ČIA – vienintelis uždarymas didžiajam (function () { ... })()

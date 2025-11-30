@@ -62,7 +62,7 @@
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Pradžia</a></li>
         <li><a href="#about"><i class="bi bi-tv navicon"></i> Svetainė</a></li>
-        <li><a href="#resume"><i class="bi bi-fork-knife navicon"></i> Virtuvė</a></li>
+        <li><a href="#kitchen"><i class="bi bi-fork-knife navicon"></i> Virtuvė</a></li>
         <li><a href="#portfolio"><i class="bi bi-moon-stars navicon"></i> Miegamasis</a></li>
         <li><a href="#services"><i class="bi bi-emoji-smile navicon"></i> Vaikų Kambarys</a></li>
         <li><a href="#contact"><i class="bi bi-droplet navicon"></i> Vonia</a></li>
@@ -160,7 +160,7 @@
           </div>
 
           <div class="col-md-4">
-            <a href="#resume" class="room-card with-img">
+            <a href="#kitchen" class="room-card with-img">
               <img src="assets/img/rooms/virtuve.webp" class="room-bg-img" alt="Virtuvė">
               <div class="room-overlay"></div>
               <div class="room-content">
@@ -434,6 +434,376 @@
         </div>
       </div>
     </section><!-- /About Section -->
+
+
+    <!-- VIRTUVĖ Section -->
+    <section id="kitchen" class="about section kitchen-section">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title text-start mb-4">
+          <h2>Virtuvė</h2>
+        </div>
+
+        <!-- VIRŠUTINĖ EILĖ: kalendorius + pirkinių sąrašas -->
+        <div class="row g-4">
+          <!-- Kalendorius (plati korta, kaip Live kamera) -->
+          <div class="col-lg-8">
+            <div class="card-panel kitchen-calendar-card">
+              <header class="card-header">
+                <div class="card-title">
+                  <h3>Kalendorius ir veiklos</h3>
+                </div>
+                <span class="card-badge card-badge-live">Planai</span>
+              </header>
+
+              <div class="card-body kitchen-hero-body">
+                <div class="kitchen-hero-image">
+                  <img src="assets/img/rooms/kalendorius.webp" alt="Virtuvės kalendorius ir veiklos">
+                </div>
+
+                <div class="kitchen-hero-side">
+                  <div class="kitchen-hero-stat">
+                    <span class="khero-label">Šiandien</span>
+                    <span class="khero-value" id="kitchenTodayDate">2025-11-30</span>
+                  </div>
+                  <br>
+                  <div class="kitchen-hero-stat">
+                    <span class="khero-label">Artimiausia veikla</span>
+                    <span class="khero-value">„Vakarienė su draugais“</span>
+                  </div>
+                  <div class="kitchen-hero-note">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pirkinių sąrašas (aukšta korta, kaip eglutė) -->
+          <div class="col-lg-4">
+            <div class="card-panel control-card kitchen-shopping-card">
+              <header class="card-header">
+                <div class="card-title">
+                  <h3>Pirkinių sąrašas</h3>
+                </div>
+              </header>
+
+              <div class="card-body kitchen-shopping-body">
+                <div class="shopping-input-row">
+                  <input
+                    type="text"
+                    id="shopping-input"
+                    class="shopping-input"
+                    placeholder="Pridėkite produktą...">
+                  <button type="button" id="shopping-add" class="btn-pill">
+                    +
+                  </button>
+                </div>
+
+                <ul class="shopping-list" id="shopping-list">
+                  <li class="shopping-item">
+                    <label>
+                      <input type="checkbox">
+                      <span class="custom-checkbox"></span>
+                      <span class="item-text">Pienas</span>
+                    </label>
+                  </li>
+                  <li class="shopping-item">
+                    <label>
+                      <input type="checkbox">
+                      <span class="custom-checkbox"></span>
+                      <span class="item-text">Kava</span>
+                    </label>
+                  </li>
+                  <li class="shopping-item">
+                    <label>
+                      <input type="checkbox">
+                      <span class="custom-checkbox"></span>
+                      <span class="item-text">Apelsinai</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div><!-- /viršutinė eilė -->
+
+        <!-- APATINĖ EILĖ: apšvietimas + virdulys + kava (3x col-md-4 kaip svetainėje) -->
+        <div class="row g-3 mt-3 control-row">
+
+          <!-- 3. APŠVIETIMAS – toks pats kaip Svetainėje, tik 2 įrenginiai -->
+          <div class="col-md-4">
+            <div class="card-panel control-card lamp-card kitchen-lamp-card">
+              <div class="control-header">
+                <div>
+                  <h3>Virtuvės apšvietimas</h3>
+                  <span class="control-subtitle">2 įrenginiai</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="kitchen-lamp-power">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <div class="lamp-image-wrapper">
+                <button class="icon-btn kitchen-lamp-prev" type="button">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+
+                <img
+                  src="assets/img/rooms/lempa5.png"
+                  alt="Lempa"
+                  class="lamp-image lamp-image-kitchen"
+                >
+
+                <button class="icon-btn kitchen-lamp-next" type="button">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+
+              <div class="lamp-label text-center">
+                <span id="kitchenLampName">Stalo apšvietimas</span>
+              </div>
+
+              <div class="slider-block mt-2">
+                <div class="slider-label">
+                  <span>Ryškumas</span>
+                  <span><span id="kitchenLampBrightnessValue">75</span>%</span>
+                </div>
+
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="75"
+                  class="form-range kitchen-lamp-brightness"
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. VIRDULYS – AC tipo korta -->
+          <div class="col-md-4">
+            <div class="card-panel control-card kitchen-kettle-card">
+
+              <div class="control-header">
+                <div>
+                  <h3>Virdulys</h3>
+                  <span class="control-subtitle">Karšto vandens valdymas</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="kettle-power">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <!-- Virdulio nuotrauka -->
+              <div class="device-image-wrapper">
+                <img src="assets/img/rooms/virdulys.png" alt="Virdulys" class="device-image">
+              </div>
+
+              <div class="device-main-value">
+                <span class="device-label">Temperatūra</span>
+                <span class="device-value" id="kettle-temp-value">80°C</span>
+              </div>
+
+              <div class="pill-row" id="kettle-temp-buttons">
+                <button type="button" class="pill" data-temp="50">50°C</button>
+                <button type="button" class="pill" data-temp="60">60°C</button>
+                <button type="button" class="pill" data-temp="70">70°C</button>
+                <button type="button" class="pill is-active" data-temp="80">80°C</button>
+                <button type="button" class="pill" data-temp="90">90°C</button>
+                <button type="button" class="pill" data-temp="100">100°C</button>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- 5. KAVOS APARATAS – AC tipo korta, su pill mygtukais -->
+          <div class="col-md-4">
+            <div class="card-panel control-card kitchen-coffee-card">
+
+              <div class="control-header">
+                <div>
+                  <h3>Kavos aparatas</h3>
+                  <span class="control-subtitle">Pasirinkite gėrimą</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="coffee-power">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <!-- Kavos aparato nuotrauka -->
+              <div class="device-image-wrapper">
+                <img src="assets/img/rooms/aparatas.png" alt="Kavos aparatas" class="device-image">
+              </div>
+
+              <div class="device-main-value">
+                <span class="device-label">Gėrimas</span>
+                <span class="device-value" id="coffee-mode-value">Cappuccino</span>
+              </div>
+
+              <div class="pill-row" id="coffee-mode-buttons">
+                <button type="button" class="pill is-active" data-mode="Cappuccino">Cappuccino</button>
+                <button type="button" class="pill" data-mode="Juoda kava">Juoda kava</button>
+                <button type="button" class="pill" data-mode="Latte">Latte</button>
+                <button type="button" class="pill" data-mode="Kakava">Kakava</button>
+                <button type="button" class="pill" data-mode="Arbata">Arbata</button>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div><!-- /apatinė eilė -->
+
+      </div>
+    </section>
+
+
+
+    <!-- MIEGAMASIS Section -->
+      <section id="portfolio" class="section bedroom-section">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title text-start mb-4">
+            <h2>Miegamasis</h2>
+          </div>
+
+          <!-- GRIDAS: čia DEDAM VISAS 3 KORTAS -->
+          <div class="bedroom-grid">
+
+            <!-- 1. UŽUOLAIDŲ GRAFIKAS -->
+            <div class="card-panel control-card bedroom-card curtains-card">
+              <div class="control-header">
+                <div>
+                  <h3>Užuolaidų grafikas</h3>
+                  <span class="control-subtitle">Kada ryte atsidarys</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="curtains-auto">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <div class="curtains-body">
+                <div class="curtains-time-grid">
+                  <div class="time-box">
+                    <span class="time-label">Valanda</span>
+                    <span class="time-value" id="curtainHour">08</span>
+                  </div>
+                  <div class="time-box">
+                    <span class="time-label">Minutės</span>
+                    <span class="time-value" id="curtainMinute">00</span>
+                  </div>
+                </div>
+
+                <div class="curtains-footer">
+                  Užuolaidos atsidarys <span id="curtainTimeText">08:00</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. MIEGAMOJO APŠVIETIMAS -->
+            <div class="card-panel control-card bedroom-card bedroom-light-card">
+              <div class="control-header">
+                <div>
+                  <h3>Miegamojo apšvietimas</h3>
+                  <span class="control-subtitle">Pagrindinė lempa</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="bedroom-light-power">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <div class="bedroom-color-wrapper">
+                <div class="bedroom-color-wheel">
+                  <div class="bedroom-color-ring"></div>
+                  <div class="bedroom-color-inner">
+                    <i class="bi bi-lightbulb"></i>
+                    <span>Pasirinkite spalvą</span>
+                  </div>
+                  <!-- Žymeklis kaip eglutėje -->
+                  <div class="tree-color-knob bedroom-color-knob"></div>
+                </div>
+              </div>
+
+              <div class="slider-block mt-3">
+                <div class="slider-label">
+                  <span>Ryškumas</span>
+                  <span><span id="bedroomBrightnessValue">70</span>%</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="70"
+                  class="form-range"
+                  id="bedroomBrightnessSlider"
+                >
+              </div>
+
+              <div class="tree-hex-row bedroom-hex-row">
+                <span>Lempos spalva</span>
+                <span class="tree-hex">
+                  <span id="bedroomColorLabel">#ffffff</span>
+                  <span class="color-preview" id="bedroomColorPreview"></span>
+                </span>
+              </div>
+
+              <input type="color" id="bedroomColorPicker" value="#ffffff" hidden>
+            </div>
+
+            <!-- 3. AUDIO SISTEMA -->
+            <div class="card-panel control-card bedroom-card audio-card">
+              <div class="control-header">
+                <div>
+                  <h3>Audio sistema</h3>
+                  <span class="control-subtitle">Miegamojo muzika</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="audio-power">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <!-- Apps -->
+              <div class="audio-apps-row">
+                <button class="audio-app is-active" data-app="spotify">
+                  <img src="assets/img/rooms/spotify.png" alt="Spotify">
+                  <span>Spotify</span>
+                </button>
+                <button class="audio-app" data-app="ytmusic">
+                  <img src="assets/img/rooms/youtube.jpg" alt="YouTube Music">
+                  <span>YouTube</span>
+                </button>
+                <button class="audio-app" data-app="soundcloud">
+                  <img src="assets/img/rooms/soundcloud.jpg" alt="SoundCloud">
+                  <span>SoundCloud</span>
+                </button>
+              </div>
+
+              <!-- Garsas -->
+              <div class="audio-volume-row">
+                <button class="tv-vol-btn audio-vol-minus">−</button>
+                <div class="slider-block flex-grow-1">
+                  <div class="slider-label">
+                    <span>Garsas</span>
+                    <span><span id="audioVolumeValue">35</span>%</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="35"
+                    class="form-range"
+                    id="audioVolumeSlider"
+                  >
+                </div>
+                <button class="tv-vol-btn audio-vol-plus">+</button>
+              </div>
+            </div>
+
+          </div><!-- /.bedroom-grid -->
+        </div>
+      </section>
+
+
 
   </main>
 
