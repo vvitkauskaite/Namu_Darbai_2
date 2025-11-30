@@ -9,7 +9,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +25,6 @@
 
 </head>
 
-
 <body class="index-page">
 
   <header id="header" class="header dark-background d-flex flex-column justify-content-between">
@@ -33,1185 +34,413 @@
       <div class="profile-img">
       </div>
 
-<!-- PROFILIO BLOKAS -->
-<div class="profile-row">
-  <img src="assets/img/logo.webp" alt="Martynas Andersas" class="profile-avatar">
-
-  <div class="profile-info">
-    <button class="profile-toggle" type="button">
-      <span class="profile-name">Martynas Andersas</span>
-      <i class="bi bi-chevron-down"></i>
-    </button>
-
-    <ul class="profile-menu">
-      <li><a href="#">Profilio Nustatymai</a></li>
-
-      <li class="has-children">
-        <a href="#" class="has-children-toggle">Daugiau...</a>
-        <ul class="profile-submenu">
-          <li><a href="#">Pagalba</a></li>
-          <li><a href="#">Siųsti Atsiliepimą</a></li>
-          <li><a href="#">Privatumo Nustatymai</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#">Atsijungti</a></li>
-    </ul>
-  </div>
-</div>
+      <!-- PROFILIO BLOKAS -->
+      <div class="profile-row">
+        <img src="assets/img/logo.webp" alt="Martynas Andersas" class="profile-avatar">
+        <div class="profile-info">
+          <button class="profile-toggle" type="button">
+            <span class="profile-name">Martynas Andersas</span>
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <ul class="profile-menu">
+            <li><a href="#">Profilio Nustatymai</a></li>
+            <li class="has-children">
+              <a href="#" class="has-children-toggle">Daugiau...</a>
+              <ul class="profile-submenu">
+                <li><a href="#">Pagalba</a></li>
+                <li><a href="#">Siųsti Atsiliepimą</a></li>
+                <li><a href="#">Privatumo Nustatymai</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Atsijungti</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Pradžia</a></li>
         <li><a href="#about"><i class="bi bi-tv navicon"></i> Svetainė</a></li>
         <li><a href="#resume"><i class="bi bi-fork-knife navicon"></i> Virtuvė</a></li>
-        <li><a href="#portfolio"><i class="bi bi-book navicon"></i> Miegamasis</a></li>
-        <li><a href="#services"><i class="bi bi-cookie navicon"></i> Vaikų kambarys</a></li>
+        <li><a href="#portfolio"><i class="bi bi-moon-stars navicon"></i> Miegamasis</a></li>
+        <li><a href="#services"><i class="bi bi-emoji-smile navicon"></i> Vaikų Kambarys</a></li>
         <li><a href="#contact"><i class="bi bi-droplet navicon"></i> Vonia</a></li>
+        <li><a href="#robot"><i class="bi bi-robot navicon"></i> Robotų Siurblių Valdymas</a></li>
       </ul>
     </nav>
-
   </header>
 
   <main class="main">
 
-<main class="main">
+    <!-- Pradzia Section -->
+    <section id="hero" class="hero section">
+      <div class="hero-media" id="heroMedia">
+        <img src="assets/img/namaiPradzia2.png" alt="Smart home" class="hero-bg-image">
+        <video class="hero-bg-video" src="assets/video/SmartHome.mp4" muted loop playsinline>
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="hero-content">
+              <h1 data-aos="fade-up" data-aos-delay="200">
+                Labas, <span class="accent-text"> Martynai!</span>
+              </h1>
+              <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                Patogiai stebėkite ir valdykite visus išmanių namų įrenginius vienoje vietoje.
+                Sukurtas intuityvus valdymas leidžia greitai keisti apšvietimą, temperatūrą ar saugos parametrus.
+                Valdykite savo namus taip, kaip jums patogiausia — bet kada ir bet kur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- Pradzia Section -->
-  <section id="hero" class="hero section">
-    <div class="hero-media" id="heroMedia">
-      <img
-        src="assets/img/profile/namaiPradzia2.png"
-        alt="Smart home"
-        class="hero-bg-image">
+      <div class="hero-top-info">
+        <div class="info-item">
+          <i class="bi bi-geo-alt-fill navicon"></i>
+          <span id="userLocation">Plytinės g. 27A, Vilnius, Lietuva</span>
+        </div>
 
-      <video
-        class="hero-bg-video"
-        src="assets/video/SmartHome.mp4"
-        muted
-        loop
-        playsinline>
-      </video>
+        <div class="info-item">
+          <i class="bi bi-cloud-sun-fill navicon"></i>
+          <span id="weatherInfo">+21°C · Giedra</span>
+        </div>
 
-      <div class="hero-overlay"></div>
-    </div>
+        <div class="info-item">
+          <i class="bi bi-wifi navicon"></i>
+          <span id="wifiStatus">Prisijungta</span>
+        </div>
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="hero-content">
-            <h1 data-aos="fade-up" data-aos-delay="200">
-              Labas, <span class="accent-text"> Martynai!</span>
-            </h1>
-            <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
-              Patogiai stebėkite ir valdykite visus išmanių namų įrenginius vienoje vietoje.
-              Sukurtas intuityvus valdymas leidžia greitai keisti apšvietimą, temperatūrą ar saugos parametrus.
-              Valdykite savo namus taip, kaip jums patogiausia — bet kada ir bet kur.
+        <div class="info-item">
+          <i class="bi bi-clock-fill navicon"></i>
+          <span id="liveClock">00:00</span>
+        </div>
+
+        <div class="info-item">
+          <i class="bi bi-calendar-event-fill navicon"></i>
+          <span id="liveDate">2025 - 11 - 29</span>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="scroll-hint">
+        <i class="bi bi-mouse"></i>
+        <span>Slinkite žemyn, kad pamatytumėte daugiau</span>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Kambarių valdymo skydelis -->
+    <section class="hero-rooms-section">
+      <div class="container rooms-overview" id="roomsOverview">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="rooms-title">Pasirinkite kambarį</h2>
+            <p class="rooms-subtitle">
+              Valdykite apšvietimą, klimatą ir įrenginius skirtinguose namų kambariuose.
+              Pasirinkite kambarį, kad atidarytumėte detalią valdymo sąsają.
             </p>
           </div>
         </div>
+
+        <div class="row rooms-grid">
+          <div class="col-md-4">
+            <a href="#about" class="room-card with-img">
+              <img src="assets/img/rooms/svetaine.jpg" class="room-bg-img" alt="Svetainė">
+              <div class="room-overlay"></div>
+              <div class="room-content">
+                <i class="bi bi-tv navicon"></i>
+                <h3>Svetainė</h3>
+                <p>Vaizdas realiu laiku, TV, kondicionierius.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a href="#resume" class="room-card with-img">
+              <img src="assets/img/rooms/virtuve.webp" class="room-bg-img" alt="Virtuvė">
+              <div class="room-overlay"></div>
+              <div class="room-content">
+                <i class="bi bi-fork-knife navicon"></i>
+                <h3>Virtuvė</h3>
+                <p>Kavos aparatas, kalendorius.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a href="#portfolio" class="room-card with-img">
+              <img src="assets/img/rooms/miegamasis.webp" class="room-bg-img" alt="Miegamasis">
+              <div class="room-overlay"></div>
+              <div class="room-content">
+                <i class="bi bi-moon-stars navicon"></i>
+                <h3>Miegamasis</h3>
+                <p>Oro kokybė, audio sistema.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a href="#services" class="room-card with-img">
+              <img src="assets/img/rooms/vaiku.png" class="room-bg-img" alt="Vaikų kambarys">
+              <div class="room-overlay"></div>
+              <div class="room-content">
+                <i class="bi bi-emoji-smile navicon"></i>
+                <h3>Vaikų kambarys</h3>
+                <p>Naktinis apšvietimas, užuolaidos.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a href="#contact" class="room-card with-img">
+              <img src="assets/img/rooms/vonia.jpg" class="room-bg-img" alt="Vonia">
+              <div class="room-overlay"></div>
+              <div class="room-content">
+                <i class="bi bi-droplet navicon"></i>
+                <h3>Vonia</h3>
+                <p>Veidrodžio šildymas, vėdinimas.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a href="#robot" class="room-card with-img">
+              <img src="assets/img/rooms/robotas.png" class="room-bg-img" alt="Robotų siurblių valdymas">
+              <div class="room-overlay"></div>
+              <div class="room-content">
+                <i class="bi bi-robot"></i>
+                <h3>Robotų Siurblių Valdymas</h3>
+                <p>Valymo žemėlapis, grafikas, baterijos būsena.</p>
+              </div>
+            </a>
+          </div>
+
+        </div>
       </div>
-    </div>
-
-    <div class="hero-top-info">
-      <div class="info-item">
-        <i class="bi bi-geo-alt-fill"></i>
-        <span id="userLocation">Plytinės g. 27A, Vilnius, Lietuva</span>
-      </div>
-
-      <div class="info-item">
-        <i class="bi bi-cloud-sun-fill"></i>
-        <span id="weatherInfo">+21°C   ·   Giedra</span>
-      </div>
-
-      <div class="info-item">
-        <i class="bi bi-wifi"></i>
-        <span id="wifiStatus">Prisijungta</span>
-      </div>
-
-      <div class="info-item">
-        <i class="bi bi-clock-fill"></i>
-        <span id="liveClock">00:00</span>
-      </div>
-
-      <div class="info-item">
-        <i class="bi bi-calendar-event-fill"></i>
-        <span id="liveDate">2024 - 11 - 29</span>
-      </div>
-    </div>
-    
-    <!-- Scroll hint -->
-  <div class="scroll-hint">
-    <i class="bi bi-mouse"></i>
-    <span>Slinkite žemyn, kad pamatytumėte daugiau</span>
-  </div>
-
-  </section><!-- /Hero Section -->
-
-</main>
-
+    </section><!-- /Hero2 Section -->
 
     <!-- Svetaine Section -->
-    <section id="about" class="about section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-
-            <div class="intro-header text-center" data-aos="fade-up" data-aos-delay="150">
-              <h1>Hi, I'm Mark Andersen</h1>
-              <p class="subtitle">Digital Product Designer &amp; Creative Strategist</p>
-            </div>
-
-            <div class="main-content-wrapper">
-              <div class="row align-items-start">
-
-                <div class="col-lg-4" data-aos="fade-right" data-aos-delay="200">
-                  <div class="profile-section">
-                    <div class="profile-image-container">
-                      <img src="assets/img/profile/profile-square-15.webp" class="img-fluid" alt="Sarah Chen">
-                    </div>
-                    <div class="profile-meta">
-                      <div class="location">
-                        <i class="bi bi-geo-alt"></i>
-                        <span>San Francisco, CA</span>
-                      </div>
-                      <div class="status">
-                        <div class="status-indicator"></div>
-                        <span>Available for projects</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-8" data-aos="fade-left" data-aos-delay="250">
-                  <div class="content-area">
-
-                    <div class="story-block">
-                      <p class="lead-text">I craft digital experiences that bridge the gap between user needs and business goals. With 7 years of experience in product design, I've helped startups and Fortune 500 companies create meaningful connections with their users.</p>
-                      <p>My design philosophy centers around empathy, iteration, and impact. I believe great design isn't just about aesthetics—it's about solving real problems and creating value for both users and businesses.</p>
-                    </div>
-
-                    <div class="expertise-grid">
-                      <div class="expertise-item" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="expertise-icon">
-                          <i class="bi bi-lightbulb"></i>
-                        </div>
-                        <div class="expertise-content">
-                          <h4>Product Strategy</h4>
-                          <p>User research, journey mapping, and strategic design thinking</p>
-                        </div>
-                      </div>
-
-                      <div class="expertise-item" data-aos="zoom-in" data-aos-delay="350">
-                        <div class="expertise-icon">
-                          <i class="bi bi-phone"></i>
-                        </div>
-                        <div class="expertise-content">
-                          <h4>Mobile &amp; Web Design</h4>
-                          <p>Responsive interfaces and seamless user experiences</p>
-                        </div>
-                      </div>
-
-                      <div class="expertise-item" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="expertise-icon">
-                          <i class="bi bi-graph-up"></i>
-                        </div>
-                        <div class="expertise-content">
-                          <h4>Design Systems</h4>
-                          <p>Scalable component libraries and brand consistency</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="philosophy-quote" data-aos="fade-up" data-aos-delay="450">
-                      <div class="quote-mark">"</div>
-                      <p>Good design is not about perfection—it's about understanding, empathy, and continuous learning from the people who use what we create.</p>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="bottom-section" data-aos="fade-up" data-aos-delay="500">
-              <div class="row align-items-center">
-                <div class="col-lg-6">
-                  <div class="collaboration-text">
-                    <h3>Let's create something amazing together</h3>
-                    <p>Whether you're looking to redesign an existing product or build something completely new, I'd love to explore how we can bring your vision to life.</p>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="action-buttons">
-                    <a href="#portfolio" class="btn-custom primary">View Case Studies</a>
-                    <a href="#contact" class="btn-custom secondary">Start a Project</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
+    <section id="about" class="about section living-room-section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-start mb-4">
+          <h2>Svetainė</h2>
         </div>
 
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats section light-background">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-
-            <div class="stats-grid">
-              <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-number">
-                  <span data-purecounter-start="0" data-purecounter-end="127" data-purecounter-duration="1" class="purecounter"></span>
-                </div>
-                <p class="stat-label">Voluptas nulla pariatur</p>
-              </div>
-
-              <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="stat-number">
-                  <span data-purecounter-start="0" data-purecounter-end="89" data-purecounter-duration="1" class="purecounter"></span>K
-                </div>
-                <p class="stat-label">Nostrum exercitationem</p>
-              </div>
-
-              <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="stat-number">
-                  <span data-purecounter-start="0" data-purecounter-end="234" data-purecounter-duration="1" class="purecounter"></span>+
-                </div>
-                <p class="stat-label">Temporibus autem</p>
-              </div>
-            </div>
-
-            <div class="achievements-row" data-aos="fade-up" data-aos-delay="500">
-              <div class="achievement">
-                <div class="achievement-icon">
-                  <i class="bi bi-trophy"></i>
-                </div>
-                <div class="achievement-content">
-                  <h4>Excellence Award</h4>
-                  <p>Ut enim ad minima veniam quis</p>
-                </div>
-              </div>
-
-              <div class="achievement">
-                <div class="achievement-icon">
-                  <i class="bi bi-star"></i>
-                </div>
-                <div class="achievement-content">
-                  <h4>Recognition</h4>
-                  <p>Sed do eiusmod tempor incididunt</p>
-                </div>
-              </div>
-
-              <div class="achievement">
-                <div class="achievement-icon">
-                  <i class="bi bi-gem"></i>
-                </div>
-                <div class="achievement-content">
-                  <h4>Innovation</h4>
-                  <p>Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="intro-content text-center mb-5" data-aos="fade-up" data-aos-delay="150">
-              <p class="lead-text">Mastery achieved through continuous exploration and dedicated refinement of craft</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
+        <div class="row g-4">
           <div class="col-lg-8">
-            <div class="skills-container">
-
-              <div class="skill-category skills-animation" data-aos="fade-up" data-aos-delay="200">
-                <div class="category-header">
-                  <h3 class="category-title">Technical Expertise</h3>
-                  <p class="category-subtitle">Core development and technical skills</p>
-                </div>
-                <div class="skills-list">
-                  <div class="skill-row">
-                    <div class="skill-info">
-                      <span class="skill-name">Full-Stack Development</span>
-                      <span class="skill-percentage">92%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="skill-row">
-                    <div class="skill-info">
-                      <span class="skill-name">Cloud Architecture</span>
-                      <span class="skill-percentage">88%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="skill-row">
-                    <div class="skill-info">
-                      <span class="skill-name">Database Design</span>
-                      <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
+            <div class="card-panel live-camera-card">
+              <div class="live-badge">
+                <span class="live-dot"></span> Live
               </div>
+              <img src="assets/img/rooms/svetaine.jpg" alt="Svetainės kamera" class="live-camera-img">
 
-              <div class="skill-category skills-animation" data-aos="fade-up" data-aos-delay="250">
-                <div class="category-header">
-                  <h3 class="category-title">Creative Design</h3>
-                  <p class="category-subtitle">Visual and user experience design</p>
-                </div>
-                <div class="skills-list">
-                  <div class="skill-row">
-                    <div class="skill-info">
-                      <span class="skill-name">UI/UX Design</span>
-                      <span class="skill-percentage">94%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="skill-row">
-                    <div class="skill-info">
-                      <span class="skill-name">Brand Identity</span>
-                      <span class="skill-percentage">86%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="skill-row">
-                    <div class="skill-info">
-                      <span class="skill-name">Motion Graphics</span>
-                      <span class="skill-percentage">78%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="skill-category skills-animation" data-aos="fade-up" data-aos-delay="300">
-                <div class="category-header">
-                  <h3 class="category-title">Strategic Leadership</h3>
-                  <p class="category-subtitle">Management and business acumen</p>
-                </div>
-                <div class="skills-list">
-                  <div class="skill-row">
-                    <div class="skill-info">
-                      <span class="skill-name">Project Management</span>
-                      <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="skill-row">
-                    <div class="skill-info">
-                      <span class="skill-name">Team Coordination</span>
-                      <span class="skill-percentage">87%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="skill-row">
-                    <div class="skill-info">
-                      <span class="skill-name">Strategic Planning</span>
-                      <span class="skill-percentage">83%</span>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="skills-sidebar">
-
-              <div class="expertise-highlight" data-aos="fade-up" data-aos-delay="350">
-                <div class="highlight-icon">
-                  <i class="bi bi-trophy"></i>
-                </div>
-                <h4 class="highlight-title">Years of Experience</h4>
-                <div class="experience-number">
-                  <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
-                  <span class="experience-label">Years</span>
-                </div>
-                <p class="highlight-description">Dedicated to mastering the craft of digital innovation and strategic problem-solving.</p>
-              </div>
-
-              <div class="technologies-section" data-aos="fade-up" data-aos-delay="400">
-                <h5 class="tech-title">Primary Technologies</h5>
-                <div class="tech-stack">
-                  <div class="tech-item">
-                    <i class="bi bi-filetype-js"></i>
-                    <span>JavaScript</span>
-                  </div>
-                  <div class="tech-item">
-                    <i class="bi bi-code-square"></i>
-                    <span>React</span>
-                  </div>
-                  <div class="tech-item">
-                    <i class="bi bi-server"></i>
-                    <span>Node.js</span>
-                  </div>
-                  <div class="tech-item">
-                    <i class="bi bi-cloud"></i>
-                    <span>AWS</span>
-                  </div>
-                  <div class="tech-item">
-                    <i class="bi bi-palette"></i>
-                    <span>Figma</span>
-                  </div>
-                  <div class="tech-item">
-                    <i class="bi bi-diagram-3"></i>
-                    <span>Docker</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="achievements-section" data-aos="fade-up" data-aos-delay="450">
-                <h5 class="achievements-title">Recent Achievements</h5>
-                <div class="achievement-list">
-                  <div class="achievement-item">
-                    <div class="achievement-date">2024</div>
-                    <div class="achievement-text">Certified Kubernetes Administrator</div>
-                  </div>
-                  <div class="achievement-item">
-                    <div class="achievement-date">2023</div>
-                    <div class="achievement-text">Google Cloud Professional Architect</div>
-                  </div>
-                  <div class="achievement-item">
-                    <div class="achievement-date">2023</div>
-                    <div class="achievement-text">AWS Solutions Architect Pro</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Skills Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row align-items-start">
-          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
-            <div class="professional-journey">
-              <div class="section-intro">
-                <div class="icon-wrapper">
-                  <i class="bi bi-briefcase-fill"></i>
-                </div>
-                <h2>Professional Experience</h2>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.</p>
-              </div>
-
-              <div class="experience-timeline">
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-content">
-                    <div class="position-meta">
-                      <span class="timeline-year">2023 - Present</span>
-                    </div>
-                    <h3>Creative Director</h3>
-                    <h4>Innovation Studios Ltd</h4>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione.</p>
-                    <div class="key-achievements">
-                      <span class="achievement-tag">Team Leadership</span>
-                      <span class="achievement-tag">Strategic Planning</span>
-                      <span class="achievement-tag">Creative Vision</span>
-                    </div>
-                  </div>
+              <div class="live-info-pills">
+                <div class="pill">
+                  <i class="bi bi-droplet-half"></i>
+                  <span><span id="livingHumidity">50</span>%</span>
                 </div>
 
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="350">
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-content">
-                    <div class="position-meta">
-                      <span class="timeline-year">2020 - 2023</span>
-                    </div>
-                    <h3>Senior Product Designer</h3>
-                    <h4>Digital Innovations Corp</h4>
-                    <p>Ut enim ad minima veniam quis nostrum exercitationem ullam corporis suscipit laboriosam nisi ut aliquid ex ea commodi.</p>
-                  </div>
+                <div class="pill">
+                  <i class="bi bi-thermometer-half"></i>
+                  <span><span id="livingTemp">21</span>°C</span>
                 </div>
 
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-content">
-                    <div class="position-meta">
-                      <span class="timeline-year">2017 - 2020</span>
-                    </div>
-                    <h3>UX/UI Designer</h3>
-                    <h4>Creative Solutions Agency</h4>
-                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum.</p>
-                  </div>
+                <div class="pill">
+                  <i class="bi bi-wifi"></i>
+                  <span>Ryšys stabilus</span>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-            <div class="education-skills">
-              <div class="section-intro">
-                <div class="icon-wrapper">
-                  <i class="bi bi-mortarboard-fill"></i>
+            <!-- Apatiniai 3 valdymo blokai -->
+            <div class="row g-3 mt-3 control-row">
+              <div class="col-md-4">
+                <div class="card-panel control-card lamp-card">
+                  <div class="control-header">
+                    <div>
+                      <h3>Išmanusis apšvietimas</h3>
+                      <span class="control-subtitle">3 įrenginiai</span>
+                    </div>
+                    <button class="toggle-chip is-on" data-role="lamp-power">
+                      <span class="dot"></span>
+                    </button>
+                  </div>
+
+                  <div class="lamp-image-wrapper">
+                    <button class="icon-btn lamp-prev" type="button">
+                      <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <img src="assets/img/rooms/lempa1.png" alt="Lempa" class="lamp-image" data-index="0">
+                    <button class="icon-btn lamp-next" type="button">
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
+
+                  <div class="lamp-label text-center">
+                    <span id="lampName">Pagrindinė lempa</span>
+                  </div>
+                  <div class="slider-block mt-2">
+                    <div class="slider-label">
+                      <span>Ryškumas</span>
+                      <span><span id="lampBrightnessValue">55</span>%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="55" class="form-range lamp-brightness">
+                  </div>
                 </div>
-                <h2>Education &amp; Qualifications</h2>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
               </div>
 
-              <div class="education-grid">
-                <div class="education-card primary" data-aos="zoom-in" data-aos-delay="300">
-                  <div class="education-header">
-                    <div class="degree-icon">
-                      <i class="bi bi-award"></i>
-                    </div>
-                    <div class="degree-info">
-                      <h3>Master of Design</h3>
-                      <p class="institution">Tempus Design Institute</p>
-                      <span class="graduation-year">2015 - 2017</span>
-                    </div>
+              <!-- Oro kondicionierius -->
+            <div class="col-md-4">
+              <div class="card-panel control-card ac-card">
+                <div class="control-header">
+                  <div>
+                    <h3>Kondicionierius</h3>
+                    <span class="control-subtitle">Svetainės klimatas</span>
                   </div>
-                  <div class="education-details">
-                    <p>Magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <div class="honors">
-                      <span class="honor-badge">Magna Cum Laude</span>
+                  <button class="toggle-chip is-on" data-role="ac-power">
+                    <span class="dot"></span>
+                  </button>
+                </div>
+                <div class="ac-gauge-wrapper">
+                  <div class="ac-gauge">
+                    <div class="ac-gauge-arc"></div>
+                    <div class="ac-gauge-inner">
+                      <span id="acTempValue" class="ac-temp-value">21</span>
+                      <span class="ac-temp-unit">°C</span>
                     </div>
+                    <div id="acKnob" class="ac-gauge-knob"></div>
                   </div>
                 </div>
-
-                <div class="education-card" data-aos="zoom-in" data-aos-delay="350">
-                  <div class="education-header">
-                    <div class="degree-icon">
-                      <i class="bi bi-laptop"></i>
-                    </div>
-                    <div class="degree-info">
-                      <h3>Bachelor of Arts</h3>
-                      <p class="institution">Creative Arts University</p>
-                      <span class="graduation-year">2011 - 2015</span>
-                    </div>
-                  </div>
-                  <div class="education-details">
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.</p>
-                  </div>
+                <div class="ac-temp-actions">
+                  <button class="ac-btn ac-minus">−</button>
+                  <span class="ac-temp-label" id="acTempLabel">Comfort</span>
+                  <button class="ac-btn ac-plus">+</button>
                 </div>
+                <input type="range" min="15" max="30" value="21"
+                      class="form-range ac-temp-slider ac-hidden-slider">
 
-                <div class="certification-section" data-aos="fade-up" data-aos-delay="400">
-                  <h4>Professional Certifications</h4>
-                  <div class="certifications">
-                    <div class="cert-item">
-                      <i class="bi bi-patch-check"></i>
-                      <div class="cert-details">
-                        <span class="cert-name">Advanced UX Design</span>
-                        <span class="cert-provider">Design Academy • 2022</span>
+                <div class="ac-modes mt-3">
+                  <button class="mode-chip active" data-mode="auto">Auto</button>
+                  <button class="mode-chip" data-mode="cool">Cool</button>
+                  <button class="mode-chip" data-mode="fan">Fan</button>
+                  <button class="mode-chip" data-mode="sleep">Sleep</button>
+                  <button class="mode-chip" data-mode="heat">Heat</button>
+                  <button class="mode-chip" data-mode="dry">Dry</button>
+                </div>
+              </div>
+            </div>
+              
+              <!-- TV valdymas -->
+              <div class="col-md-4">
+                <div class="card-panel control-card tv-card">
+                  <div class="control-header">
+                    <div>
+                      <h3>Televizorius</h3>
+                      <span class="control-subtitle">Svetainės media centras</span>
+                    </div>
+                    <button class="toggle-chip" data-role="tv-power">
+                      <span class="dot"></span>
+                    </button>
+                  </div>
+                  <div class="tv-status mb-2">
+                    <span>Ekranas</span>
+                    <span id="tvStatusText">Išjungtas</span>
+                  </div>
+
+                  <br>
+                  <br>
+
+                  <div class="tv-status mb-2">Pasirinkite programą</div>
+                  <div class="tv-apps-row">
+                    <div class="tv-app tv-app-netflix">
+                      <img src="assets/img/rooms/netflix.png" alt="Netflix">
+                    </div>
+                    <div class="tv-app tv-app-disney">
+                      <img src="assets/img/rooms/disney.png" alt="Disney">
+                    </div>
+                    <div class="tv-app tv-app-spotify">
+                      <img src="assets/img/rooms/spotify.png" alt="Spotify">
+                    </div>
+                    <div class="tv-app tv-app-appletv">
+                      <img src="assets/img/rooms/apple.png" alt="Apple TV">
+                    </div>
+                  </div>
+
+                  <br>
+                  <br>
+
+                  <div class="tv-volume-row">
+                    <button class="tv-vol-btn tv-vol-minus">−</button>
+                    <div class="slider-block flex-grow-1">
+                      <div class="slider-label">
+                        <span>Garsas</span>
+                        <span><span id="tvVolumeValue">20</span>%</span>
                       </div>
+                      <input type="range" min="0" max="100" value="20"
+                            class="form-range tv-volume-slider">
                     </div>
-                    <div class="cert-item">
-                      <i class="bi bi-patch-check"></i>
-                      <div class="cert-details">
-                        <span class="cert-name">Digital Innovation Strategy</span>
-                        <span class="cert-provider">Innovation Institute • 2021</span>
-                      </div>
-                    </div>
-                    <div class="cert-item">
-                      <i class="bi bi-patch-check"></i>
-                      <div class="cert-details">
-                        <span class="cert-name">Leadership in Design</span>
-                        <span class="cert-provider">Leadership Academy • 2020</span>
-                      </div>
-                    </div>
+                    <button class="tv-vol-btn tv-vol-plus">+</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-      </div>
+          <!-- Kalėdinė eglutė -->
+          <div class="col-lg-3">
+            <div class="control-card tree-card">
 
-    </section><!-- /Resume Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <div class="filters-wrapper" data-aos="fade-up" data-aos-delay="200">
-            <ul class="portfolio-filters isotope-filters">
-              <li data-filter="*" class="filter-active">All Work</li>
-              <li data-filter=".filter-branding">Branding</li>
-              <li data-filter=".filter-web">Web Design</li>
-              <li data-filter=".filter-photography">Photography</li>
-              <li data-filter=".filter-print">Print Design</li>
-            </ul>
-          </div>
-
-          <div class="row gy-5 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="300">
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-3.webp" class="img-fluid" alt="Brand Identity Project" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-3.webp" class="glightbox action-btn preview-btn" title="Elemental Branding"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">Brand Identity</span>
-                    <span class="portfolio-year">2024</span>
-                  </div>
-                  <h3 class="portfolio-title">Elemental Branding</h3>
-                  <p class="portfolio-description">Comprehensive brand identity design focusing on natural elements and sustainable business practices.</p>
-                </div>
+              <div class="tree-photo">
+                <img src="assets/img/rooms/medis.webp" alt="Kalėdinė eglutė">
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-web">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-7.webp" class="img-fluid" alt="Digital Platform" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-7.webp" class="glightbox action-btn preview-btn" title="Digital Workspace"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
+              <div class="control-header">
+                <div>
+                  <h3>Kalėdinė eglutė</h3>
+                  <div class="control-subtitle">Išmanios girliandos</div>
                 </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">Web Application</span>
-                    <span class="portfolio-year">2024</span>
-                  </div>
-                  <h3 class="portfolio-title">Digital Workspace</h3>
-                  <p class="portfolio-description">Modern web application designed for remote collaboration with intuitive user experience and clean aesthetics.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-photography">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-portrait-3.webp" class="img-fluid" alt="Urban Photography" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-portrait-3.webp" class="glightbox action-btn preview-btn" title="Urban Narratives"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">Photography</span>
-                    <span class="portfolio-year">2023</span>
-                  </div>
-                  <h3 class="portfolio-title">Urban Narratives</h3>
-                  <p class="portfolio-description">Street photography series capturing the essence of metropolitan life and human connections.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-print">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-9.webp" class="img-fluid" alt="Editorial Design" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-9.webp" class="glightbox action-btn preview-btn" title="Annual Report Design"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">Editorial Design</span>
-                    <span class="portfolio-year">2024</span>
-                  </div>
-                  <h3 class="portfolio-title">Annual Report Design</h3>
-                  <p class="portfolio-description">Sophisticated annual report combining data visualization with compelling storytelling and premium print finishes.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-11.webp" class="img-fluid" alt="Package Design" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-11.webp" class="glightbox action-btn preview-btn" title="Artisan Collection"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">Package Design</span>
-                    <span class="portfolio-year">2023</span>
-                  </div>
-                  <h3 class="portfolio-title">Artisan Collection</h3>
-                  <p class="portfolio-description">Luxury packaging design series celebrating traditional craftsmanship with contemporary minimalist approach.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-web">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-12.webp" class="img-fluid" alt="E-commerce Platform" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-12.webp" class="glightbox action-btn preview-btn" title="Sustainable Commerce"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">E-commerce</span>
-                    <span class="portfolio-year">2024</span>
-                  </div>
-                  <h3 class="portfolio-title">Sustainable Commerce</h3>
-                  <p class="portfolio-description">Eco-conscious e-commerce platform design promoting sustainable products with seamless shopping experience.</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-5">
-
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-palette"></i>
-              </div>
-              <div class="service-content">
-                <h3><a href="service-details.html">Brand Identity Design</a></h3>
-                <p>Crafting distinctive visual identities that capture your brand's essence and connect with your target audience through thoughtful design systems.</p>
-                <a href="service-details.html" class="read-more">
-                  <span>Learn More</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="250">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-code-slash"></i>
-              </div>
-              <div class="service-content">
-                <h3><a href="service-details.html">Web Development</a></h3>
-                <p>Building modern, responsive websites and applications with clean code, optimal performance, and seamless user experiences across all devices.</p>
-                <a href="service-details.html" class="read-more">
-                  <span>Learn More</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-phone"></i>
-              </div>
-              <div class="service-content">
-                <h3><a href="service-details.html">UI/UX Design</a></h3>
-                <p>Designing intuitive interfaces and user experiences that balance aesthetics with functionality, ensuring every interaction feels natural and purposeful.</p>
-                <a href="service-details.html" class="read-more">
-                  <span>Learn More</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="350">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-megaphone"></i>
-              </div>
-              <div class="service-content">
-                <h3><a href="service-details.html">Digital Strategy</a></h3>
-                <p>Developing comprehensive digital strategies that align with your business goals and maximize your online presence through data-driven insights.</p>
-                <a href="service-details.html" class="read-more">
-                  <span>Learn More</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="testimonials-slider swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": 1,
-              "spaceBetween": 30,
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "navigation": {
-                "nextEl": ".swiper-button-next",
-                "prevEl": ".swiper-button-prev"
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-slide" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-header">
-                  <div class="stars-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="quote-icon">
-                    <i class="bi bi-quote"></i>
-                  </div>
-                </div>
-                <div class="testimonial-body">
-                  <p>"Outstanding service quality and innovative solutions have completely transformed our business processes, resulting in enhanced productivity and exceptional customer satisfaction throughout our organization."</p>
-                </div>
-                <div class="testimonial-footer">
-                  <div class="author-info">
-                    <img src="assets/img/person/person-f-12.webp" alt="Author" class="author-avatar">
-                    <div class="author-details">
-                      <h4>Sophia Martinez</h4>
-                      <span class="role">Operations Director</span>
-                      <span class="company">TechVision Corp</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-slide" data-aos="fade-up" data-aos-delay="300">
-                <div class="testimonial-header">
-                  <div class="stars-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="quote-icon">
-                    <i class="bi bi-quote"></i>
-                  </div>
-                </div>
-                <div class="testimonial-body">
-                  <p>"Professional expertise and dedicated support have significantly improved our project delivery timelines while maintaining exceptional quality standards across all our initiatives."</p>
-                </div>
-                <div class="testimonial-footer">
-                  <div class="author-info">
-                    <img src="assets/img/person/person-m-14.webp" alt="Author" class="author-avatar">
-                    <div class="author-details">
-                      <h4>Michael Anderson</h4>
-                      <span class="role">Project Manager</span>
-                      <span class="company">InnovateTech Ltd</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-slide" data-aos="fade-up" data-aos-delay="400">
-                <div class="testimonial-header">
-                  <div class="stars-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                  </div>
-                  <div class="quote-icon">
-                    <i class="bi bi-quote"></i>
-                  </div>
-                </div>
-                <div class="testimonial-body">
-                  <p>"Strategic collaboration and innovative thinking have enabled remarkable digital transformation, leading to increased efficiency and measurable business growth results."</p>
-                </div>
-                <div class="testimonial-footer">
-                  <div class="author-info">
-                    <img src="assets/img/person/person-f-11.webp" alt="Author" class="author-avatar">
-                    <div class="author-details">
-                      <h4>Jennifer Wilson</h4>
-                      <span class="role">Digital Strategy Lead</span>
-                      <span class="company">FutureScope Inc</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="swiper-navigation-wrapper">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-5">
-
-            <div class="info-item">
-              <div class="info-icon">
-                <i class="bi bi-chat-dots"></i>
-              </div>
-              <div class="info-content">
-                <h4>Let's Connect</h4>
-                <p>We're here to discuss your vision and explore how we can bring it to life together.</p>
-              </div>
-            </div>
-
-            <div class="contact-details">
-
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="bi bi-envelope-open"></i>
-                </div>
-                <div class="detail-content">
-                  <span class="detail-label">Email us</span>
-                  <span class="detail-value">contact@example.com</span>
-                </div>
-              </div>
-
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="bi bi-telephone-outbound"></i>
-                </div>
-                <div class="detail-content">
-                  <span class="detail-label">Call us</span>
-                  <span class="detail-value">+1 (555) 432-8976</span>
-                </div>
-              </div>
-
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="bi bi-geo-alt-fill"></i>
-                </div>
-                <div class="detail-content">
-                  <span class="detail-label">Visit us</span>
-                  <span class="detail-value">547 Madison Avenue<br>New York, NY 10022</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-7">
-            <div class="form-wrapper">
-              <div class="form-header">
-                <h3>Send us a message</h3>
-              </div>
-
-              <form action="forms/contact.php" method="post" class="php-email-form">
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Full Name</label>
-                      <input type="text" name="name" required="">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Email Address</label>
-                      <input type="email" name="email" required="">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label>Subject</label>
-                  <input type="text" name="subject" required="">
-                </div>
-
-                <div class="form-group">
-                  <label for="projectMessage">Message</label>
-                  <textarea name="message" id="projectMessage" rows="5" required=""></textarea>
-                </div>
-
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-
-                <button type="submit" class="submit-btn">
-                  <span>Send Message</span>
-                  <i class="bi bi-arrow-right"></i>
+                <button class="toggle-chip is-on" data-role="tree-power">
+                  <div class="dot"></div>
                 </button>
+              </div>
 
-              </form>
+              <div class="tree-color-wrapper">
+                <div class="tree-color-wheel">
+                  <div class="tree-color-ring"></div>
 
+                  <div class="tree-color-inner">
+                    <i class="bi bi-lightbulb"></i>
+                    <span>Pasirinkite<br>spalvą</span>
+                  </div>
+
+                  <div class="tree-color-knob"></div>
+                </div>
+              </div>
+
+              <div class="tree-hex-row">
+                <span>Lempučių spalva</span>
+                <span class="tree-hex">
+                  <span id="treeColorLabel">#3459a2</span>
+                  <span class="color-preview" id="treeColorPreview"></span>
+                </span>
+              </div>
+
+              <input type="color" id="treeColorPicker" value="#3459a2" hidden>
             </div>
-
           </div>
-
         </div>
       </div>
-
-    </section><!-- /Contact Section -->
+    </section><!-- /About Section -->
 
   </main>
 
-  <footer id="footer" class="footer light-background">
-    <div class="container">
-      <h3 class="sitename">Mark Andersen</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Mark Andersen</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -1234,10 +463,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
