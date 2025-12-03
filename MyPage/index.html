@@ -295,7 +295,7 @@
 
               <!-- Oro kondicionierius -->
             <div class="col-md-4">
-              <div class="card-panel control-card ac-card">
+              <div class="card-panel control-card ac-card living-ac-card">
                 <div class="control-header">
                   <div>
                     <h3>Kondicionierius</h3>
@@ -799,10 +799,387 @@
               </div>
             </div>
 
-          </div><!-- /.bedroom-grid -->
+          </div>
         </div>
       </section>
 
+
+      <!-- VAIKU KAMABRYS section-->
+      <section id="services" class="section kids-section">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title text-start mb-4">
+            <h2>Vaikų kambarys</h2>
+          </div>
+
+          <div class="kids-grid">
+
+            <!-- 1. UŽUOLAIDŲ GRAFIKAS (COPY iš miegamojo, bet su kitais ID) -->
+            <div class="card-panel control-card bedroom-card kids-curtains-card">
+              <div class="control-header">
+                <div>
+                  <h3>Užuolaidų grafikas</h3>
+                  <span class="control-subtitle">Kada ryte atsidarys</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="kids-curtains-auto">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <div class="curtains-body">
+                <div class="curtains-time-grid">
+                  <div class="time-box">
+                    <span class="time-label">Valanda</span>
+                    <span class="time-value" id="kidsCurtainHour">08</span>
+                  </div>
+                  <div class="time-box">
+                    <span class="time-label">Minutės</span>
+                    <span class="time-value" id="kidsCurtainMinute">00</span>
+                  </div>
+                </div>
+
+                <div class="curtains-footer">
+                  Užuolaidos atsidarys <span id="kidsCurtainTimeText">08:00</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. NAKTINĖ LEMPA -->
+            <div class="card-panel control-card bedroom-card kids-night-card">
+              <div class="control-header">
+                <div>
+                  <h3>Naktinė lempa</h3>
+                  <span class="control-subtitle">Vaikų kambario šviesa</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="kids-light-power">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <!-- Naktinės lempos nuotrauka -->
+              <div class="device-image-wrapper kids-night-image-wrapper">
+                <img src="assets/img/rooms/naktine.png"
+                    alt="Naktinė lempa"
+                    class="device-image kids-night-image">
+              </div>
+
+              <!-- Spalvų ratas kaip miegamajame -->
+              <div class="kids-color-wrapper">
+                <div class="kids-color-wheel">
+                  <div class="kids-color-ring"></div>
+                  <div class="kids-color-inner">
+                    <i class="bi bi-lightbulb"></i>
+                    <span>Pasirinkite spalvą</span>
+                  </div>
+                  <div class="kids-color-knob"></div>
+                </div>
+              </div>
+
+              <!-- Ryškumo slideris -->
+              <div class="slider-block mt-3">
+                <div class="slider-label">
+                  <span>Ryškumas</span>
+                  <span><span id="kidsBrightnessValue">60</span>%</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="60"
+                  class="form-range"
+                  id="kidsBrightnessSlider">
+              </div>
+
+              <!-- HEX spalva -->
+              <div class="tree-hex-row bedroom-hex-row">
+                <span>Lempos spalva</span>
+                <span class="tree-hex">
+                  <span id="kidsColorLabel">#ffffff</span>
+                  <span class="color-preview" id="kidsColorPreview"></span>
+                </span>
+              </div>
+
+              <input type="color" id="kidsColorPicker" value="#ffffff" hidden>
+            </div>
+
+            <!-- 3. VĖDINIMAS (FAN) -->
+            <div class="card-panel control-card bedroom-card kids-fan-card">
+              <div class="control-header">
+                <div>
+                  <h3>Vėdinimas</h3>
+                  <span class="control-subtitle">Lubų ventiliatorius</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="kids-fan-power">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <div class="device-image-wrapper">
+                <img src="assets/img/rooms/fan.png"
+                    alt="Lubų ventiliatorius"
+                    class="device-image">
+              </div>
+
+              <div class="slider-block mt-2">
+                <div class="slider-label">
+                  <span>Ventiliatoriaus greitis</span>
+                  <span><span id="kidsFanSpeedValue">40</span>%</span>
+                </div>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="40"
+                  class="form-range"
+                  id="kidsFanSpeedSlider">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- VONIA Section -->
+      <section id="contact" class="section bathroom-section">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title text-start mb-4">
+            <h2>Vonia</h2>
+          </div>
+
+          <div class="bathroom-grid">
+
+            <!-- 1. Veidrodžio šildymas -->
+            <div class="card-panel control-card bathroom-card mirror-card">
+              <div class="control-header">
+                <div>
+                  <h3>Veidrodžio šildymas</h3>
+                  <span class="control-subtitle">Rasojimo prevencija</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="mirror-power">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <div class="device-image-wrapper">
+                <img src="assets/img/rooms/veidrodis.png"
+                    alt="Veidrodis"
+                    class="device-image">
+              </div>
+
+              <div class="device-main-value">
+                <span class="device-label">Temperatūra</span>
+                <span class="device-value" id="mirror-temp-value">28°C</span>
+              </div>
+
+              <div class="pill-row" id="mirror-temp-buttons">
+                <button type="button" class="pill" data-temp="24">24°C</button>
+                <button type="button" class="pill" data-temp="26">26°C</button>
+                <button type="button" class="pill is-active" data-temp="28">28°C</button>
+                <button type="button" class="pill" data-temp="30">30°C</button>
+                <button type="button" class="pill" data-temp="32">32°C</button>
+              </div>
+            </div>
+
+            <!-- 2. VONIOS ORO KONDICIONIERIUS -->
+            <div class="card-panel control-card ac-card bath-ac-card">
+              <div class="control-header">
+                <div>
+                  <h3>Oro kondicionierius</h3>
+                  <span class="control-subtitle">Vonia</span>
+                </div>
+                <button class="toggle-chip is-on" data-role="bath-ac-power">
+                  <span class="dot"></span>
+                </button>
+              </div>
+
+              <div class="ac-gauge-wrapper">
+                <div class="ac-gauge">
+                  <div class="ac-gauge-arc"></div>
+                  <div class="ac-gauge-inner">
+                    <span class="ac-temp-value">23</span>
+                    <span class="ac-temp-unit">°C</span>
+                  </div>
+                  <div class="ac-gauge-knob"></div>
+                </div>
+              </div>
+
+              <div class="ac-temp-actions">
+                <button class="ac-btn ac-minus">−</button>
+                <span class="ac-temp-label">Comfort</span>
+                <button class="ac-btn ac-plus">+</button>
+              </div>
+
+              <input
+                type="range"
+                min="18"
+                max="30"
+                value="23"
+                class="form-range ac-temp-slider ac-hidden-slider">
+
+              <div class="ac-modes mt-3">
+                <button class="mode-chip active" data-mode="auto">Auto</button>
+                <button class="mode-chip" data-mode="cool">Cool</button>
+                <button class="mode-chip" data-mode="fan">Fan</button>
+                <button class="mode-chip" data-mode="dry">Dry</button>
+              </div>
+
+              <div class="bathroom-humidity-row">
+                <span>Drėgmė</span>
+                <span><span id="bathHumidity">55</span>%</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ROBOTŲ SIURBLIŲ VALDYMAS Section -->
+      <section id="robot" class="section robot-section">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title text-start mb-4">
+            <h2>Robotų siurblių valdymas</h2>
+          </div>
+
+          <div class="robot-grid">
+
+            <!-- 1. PAGRINDINĖ ROBO TO KORTA -->
+            <div class="robot-main-col">
+              <div class="card-panel control-card robot-main-card">
+                <div class="control-header">
+                  <div>
+                    <h3>Robotas siurblys</h3>
+                    <span class="control-subtitle">Valymo būsena</span>
+                  </div>
+                  <button class="toggle-chip is-on" data-role="robot-power">
+                    <span class="dot"></span>
+                  </button>
+                </div>
+
+                <div class="device-image-wrapper">
+                  <img src="assets/img/rooms/robotas1.png"
+                      alt="Robotas siurblys"
+                      class="device-image">
+                </div>
+
+                <div class="robot-status-row">
+                  <span>Būsena</span>
+                  <span id="robotStatusText">Valymas vyksta</span>
+                </div>
+
+                <div class="robot-battery-row">
+                  <div class="robot-battery-left">
+                    <i id="robotBatteryIcon" class="bi bi-battery-full"></i>
+                    <span>Baterija</span>
+                  </div>
+                  <span><span id="robotBatteryPercent">80</span>%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. ŽEMĖLAPIO KORTA -->
+            <div class="robot-map-col">
+              <div class="card-panel robot-map-card">
+                <div class="control-header robot-map-header">
+                  <div>
+                    <h3>Valymo žemėlapis</h3>
+                    <span class="control-subtitle">Paskutinis maršrutas</span>
+                  </div>
+                </div>
+                <div class="robot-map-body">
+                  <img src="assets/img/rooms/mapsas.png"
+                      alt="Roboto valymo žemėlapis"
+                      class="robot-map-img">
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. DEŠINĖ KOLONA: KAMBARIAI + ISTORIJA -->
+            <div class="robot-side-col">
+
+              <!-- Kambarių sąrašas -->
+              <div class="card-panel control-card robot-rooms-card">
+                <header class="card-header">
+                  <div class="card-title">
+                    <h3>Valymo kambariai</h3>
+                    <p class="card-subtitle">Pažymėkite, kur valė</p>
+                  </div>
+                </header>
+
+                <div class="card-body robot-rooms-body">
+                  <div class="shopping-input-row">
+                    <input
+                      type="text"
+                      id="robot-rooms-input"
+                      class="shopping-input"
+                      placeholder="Pridėkite kambarį...">
+                    <button type="button" id="robot-rooms-add" class="btn-pill">+</button>
+                  </div>
+
+                  <ul class="shopping-list" id="robot-rooms-list">
+                    <li class="shopping-item">
+                      <label>
+                        <input type="checkbox">
+                        <span class="custom-checkbox"></span>
+                        <span class="item-text">Svetainė</span>
+                      </label>
+                    </li>
+                    <li class="shopping-item">
+                      <label>
+                        <input type="checkbox">
+                        <span class="custom-checkbox"></span>
+                        <span class="item-text">Virtuvė</span>
+                      </label>
+                    </li>
+                    <li class="shopping-item">
+                      <label>
+                        <input type="checkbox">
+                        <span class="custom-checkbox"></span>
+                        <span class="item-text">Miegamasis</span>
+                      </label>
+                    </li>
+                    <li class="shopping-item">
+                      <label>
+                        <input type="checkbox">
+                        <span class="custom-checkbox"></span>
+                        <span class="item-text">Vonia</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Valymo istorija / kalendorius -->
+              <div class="card-panel control-card robot-history-card">
+                <header class="card-header">
+                  <div class="card-title">
+                    <h3>Valymo kalendorius</h3>
+                    <p class="card-subtitle">Pažymėkite, kada valė</p>
+                  </div>
+                </header>
+
+                <div class="card-body robot-history-body">
+                  <div class="shopping-input-row">
+                    <input
+                      type="date"
+                      id="robot-date-input"
+                      class="shopping-input">
+                    <button type="button" id="robot-date-add" class="btn-pill">
+                      ✓
+                    </button>
+                  </div>
+
+                  <ul class="shopping-list" id="robot-date-list">
+                    <!-- užpildys JS; pvz. šiandieninė data -->
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
 
 
   </main>

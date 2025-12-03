@@ -2017,19 +2017,19 @@ section,
 
 /* Aktyvūs – skirtingos spalvos */
 .audio-app.is-active[data-app="spotify"] {
-  background: #22c55e;
+  background: #78e39f;
   color: #020617;
   border-color: #22c55e;
 }
 
 .audio-app.is-active[data-app="ytmusic"] {
-  background: #ef4444;
+  background: #d67c7c;
   color: #f9fafb;
   border-color: #ef4444;
 }
 
 .audio-app.is-active[data-app="soundcloud"] {
-  background: #f97316;
+  background: #e0a377;
   color: #111827;
   border-color: #f97316;
 }
@@ -2066,4 +2066,322 @@ section,
 
 .kitchen-section .section-title h2 {
   margin-bottom: 4px;
+}
+
+
+
+/* =========================
+   VAIKŲ KAMBARYS
+   ========================= */
+
+.kids-section {
+  padding-top: 16px;
+}
+
+.kids-section > .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.kids-section .section-title {
+  padding-bottom: 8px;
+  margin-bottom: 0 !important;
+}
+
+.kids-section .section-title h2::before,
+.kids-section .section-title h2::after {
+  display: none;
+}
+
+.kids-section .section-title h2 {
+  margin-bottom: 4px;
+}
+
+/* Grid – toks pats kaip Miegamajame */
+.kids-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 991.98px) {
+  .kids-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Naktinės lempos nuotrauka truputį mažesnė */
+.kids-night-image-wrapper {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.kids-night-image {
+  max-width: 150px;
+  opacity: 0.96;
+}
+
+/* Vaikų spalvų ratas (kopija iš miegamojo, tik kiti selectoriai) */
+.kids-color-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kids-color-wheel {
+  position: relative;
+  width: 170px;
+  height: 170px;
+}
+
+.kids-color-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 18px;
+  background: conic-gradient(
+    from -240deg,
+    #00ffae,
+    #00ffff,
+    #007bff,
+    #7a00ff,
+    #ff00ff,
+    #ff0000,
+    #ffae00,
+    #00ffae
+  );
+}
+
+.kids-color-ring::after {
+  content: "";
+  position: absolute;
+  inset: 34px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.97);
+}
+
+.kids-color-inner {
+  position: absolute;
+  inset: 35px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.98);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.kids-color-inner i {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+  color: var(--accent-color);
+}
+
+/* mažas baltas „pipetės“ rutuliukas */
+.kids-color-knob {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #000000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+
+/* =========================
+   VONIA
+   ========================= */
+
+.bathroom-section {
+  padding-top: 16px;
+}
+
+.bathroom-section > .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.bathroom-section .section-title {
+  padding-bottom: 8px;
+  margin-bottom: 0 !important;
+}
+
+.bathroom-section .section-title h2::before,
+.bathroom-section .section-title h2::after {
+  display: none;
+}
+
+.bathroom-section .section-title h2 {
+  margin-bottom: 4px;
+}
+
+.bathroom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 991.98px) {
+  .bathroom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bathroom-card {
+  min-height: 260px;
+}
+
+/* Veidrodžio nuotrauka – šiek tiek mažesnė */
+.mirror-card .device-image-wrapper {
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mirror-card .device-image {
+  max-width: 170px;
+  opacity: 0.96;
+}
+
+/* Drėgmės eilutė */
+.bathroom-humidity-row {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+/* =========================
+   ROBOTŲ SIURBLIAI
+   ========================= */
+
+.robot-section {
+  padding-top: 16px;
+}
+
+.robot-section > .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.robot-section .section-title {
+  padding-bottom: 8px;
+  margin-bottom: 0 !important;
+}
+
+.robot-section .section-title h2::before,
+.robot-section .section-title h2::after {
+  display: none;
+}
+
+.robot-section .section-title h2 {
+  margin-bottom: 4px;
+}
+
+.robot-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr 1.2fr;
+  gap: 1.5rem;
+}
+
+.robot-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 991.98px) {
+  .robot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .robot-side-col {
+    flex-direction: column;
+  }
+}
+
+/* pagrindinė korta */
+.robot-main-card {
+  min-height: 260px;
+}
+
+.robot-status-row {
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.robot-battery-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.robot-battery-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.robot-battery-left i {
+  font-size: 1.1rem;
+}
+
+/* ŽEMĖLAPIO KORTA – ŠVIESUS FONAS */
+.robot-map-card {
+  background: #e5e7eb;
+  color: #111827;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.robot-map-card .control-header h3 {
+  color: #111827;
+}
+
+.robot-map-card .control-subtitle {
+  color: #4b5563;
+}
+
+.robot-map-body {
+  margin-top: 8px;
+}
+
+.robot-map-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
+/* kambarių ir istorijos kortos naudoja esamą shopping stilių */
+.robot-rooms-card .card-header,
+.robot-history-card .card-header {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  background: transparent;
+}
+
+.robot-rooms-card .card-body,
+.robot-history-card .card-body {
+  padding: 0;
 }
