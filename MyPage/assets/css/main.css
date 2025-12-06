@@ -599,6 +599,35 @@ section,
   font-size: 1.1rem;
   color: var(--accent-color);
 }
+/* HERO – AUDIO MYGTUKAS VIRŠUJE KAIRĖJE */
+.hero-audio-toggle {
+  position: absolute;
+  top: 25px;
+  left: 45px;
+  z-index: 10;
+}
+
+.audio-toggle-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.audio-toggle-btn i {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+/* Iš pradžių rodome tik „off“ ikoną */
+#audioIconOn {
+  display: none;
+}
 
 /* Scroll hint */
 .scroll-hint {

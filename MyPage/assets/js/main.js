@@ -158,6 +158,55 @@
       }
     });
   }
+  /* =========================
+   * HERO MUZIKA – ON / OFF
+   * ========================= */
+  (function () {
+    const audioBtn = document.querySelector(".audio-toggle-btn");
+    const iconOff = document.getElementById("audioIconOff");
+    const iconOn  = document.getElementById("audioIconOn");
+    const bgMusic = document.getElementById("bgMusic");
+
+    if (!audioBtn || !iconOff || !iconOn || !bgMusic) return;
+
+    let isPlaying = false;
+
+    function updateIcons() {
+      if (isPlaying) {
+        iconOn.style.display = "inline-block";
+        iconOff.style.display = "none";
+        audioBtn.setAttribute("aria-label", "Išjungti muziką");
+      } else {
+        iconOn.style.display = "none";
+        iconOff.style.display = "inline-block";
+        audioBtn.setAttribute("aria-label", "Įjungti muziką");
+      }
+    }
+
+    audioBtn.addEventListener("click", () => {
+      if (!isPlaying) {
+        // Pradėti groti nuo pradžių, kai įjungiam
+        bgMusic.currentTime = 0;
+        bgMusic.play()
+          .then(() => {
+            isPlaying = true;
+            updateIcons();
+          })
+          .catch(() => {
+            // jeigu naršyklė neleidžia – tiesiog paliekam išjungta
+            isPlaying = false;
+            updateIcons();
+          });
+      } else {
+        bgMusic.pause();
+        isPlaying = false;
+        updateIcons();
+      }
+    });
+
+    // pradinė būsena – muzika išjungta
+    updateIcons();
+  })();
 
   /* =========================
    * LIVE CLOCK + DATE
@@ -258,7 +307,7 @@
         if (status) {
           status.textContent = btn.classList.contains("is-on")
             ? "Valymas vyksta"
-            : "Stovi dokinėje";
+            : "Kraunasi";
         }
       }
     });
